@@ -52,7 +52,7 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
         var venueItem = {
           name: venue.name,
-          imageUrl: null,
+          imageUrl: "images/default-venue.png",
           rating: venue.rating,
           ratingColor: venue.ratingColor
         };
@@ -60,7 +60,7 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
         if (venue.photos.groups.length
             && venue.photos.groups[0].items.length){
               var img = venue.photos.groups[0].items[0];
-              venueItem.imageUrl = img.prefix + "250x250" + img.suffix;
+              venueItem.imageUrl = img.prefix + "74x74" + img.suffix;
         }
 
         venues.push(venueItem);
