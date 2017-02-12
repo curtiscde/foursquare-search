@@ -18,7 +18,7 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
       //Reset error message & results
       $scope.errorMessage = "";
-      $scope.venues = [];
+      $scope.venues = null;
 
       $http.get(searchUrl).then(function(response){
           console.log(response); //TODO: Remove

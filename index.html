@@ -29,7 +29,7 @@
     <div class="alert-error container" ng-show="errorMessage.length">
       {{errorMessage}}
     </div>
-    <div class="results container" ng-show="venues.length>0">
+    <div class="results container" ng-show="venues != null">
       <h2>{{venues.length}} venues returned for "{{searchTerm}}"</h2>
       <ul>
         <li ng-repeat="venue in venues">
