@@ -11,7 +11,7 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
       $scope.searchTerm = $scope.searchText;
 
       var searchUrl = config.foursquareApi.url
-                      + "/venues/search?v=20161016&intent=checkin"
+                      + "/venues/explore?v=20161016&venuePhotos=1"
                       + "&client_id=" + config.foursquareApi.clientId
                       + "&client_secret=" + config.foursquareApi.clientSecret
                       + "&near=" + $scope.searchText;
@@ -42,13 +42,19 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
   var mapResultsToVenues = function(apiResponse){
     var venues = [];
-    for(var i = 0; i<apiResponse.data.response.venues.length; i++){
+    for(var i = 0; i<apiResponse.data.response.groups.length; i++){
 
-      var venue = apiResponse.data.response.venues[i];
+      var group = apiResponse.data.response.groups[i];
 
-      venues.push({
-        name: venue.name
-      });
+      for(var v = 0; v<group.items.length; v++){
+
+        var venue = group.items[v].venue;
+
+        venues.push({
+          name: venue.name
+        });
+
+      }
 
     };
     return venues;
