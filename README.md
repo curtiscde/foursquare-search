@@ -6,7 +6,7 @@ The application is available online here:
 
 https://curttimson.github.io/foursquare-search/
 
-[![Birmingham Example][1]][1][![Cardiff Example][2]][2]
+[![Birmingham Example][1]][1]  [![Cardiff Example][2]][2]
 
 
   [1]: https://i.stack.imgur.com/n4Exh.jpg
