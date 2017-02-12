@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style/core.css" />
     <link rel="stylesheet" href="style/header.css" />
     <link rel="stylesheet" href="style/search.css" />
+    <link rel="stylesheet" href="style/results.css" />
 
     <meta name="theme-color" content="#2d5be3">
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1" />
@@ -29,7 +30,8 @@
       <h2>{{venues.length}} venues returned for "{{searchTerm}}"</h2>
       <ul>
         <li ng-repeat="venue in venues">
-          {{venue.name}}
+          <h3>{{venue.name}}</h3>
+
         </li>
       </ul>
     </div>
