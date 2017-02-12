@@ -34,9 +34,10 @@
       <ul>
         <li ng-repeat="venue in venues">
           <img ng-src="{{venue.imageUrl}}" alt="{{venue.name}}" />
-          <h3>{{venue.name}}</h3>
-
-
+          <div class="info">
+            <h3>{{venue.name}}</h3>
+            <div class="rating" style="background-color:#{{venue.ratingColor}}">{{venue.rating}}</div>
+          </div>
           <div class="details"></div>
         </li>
       </ul>

@@ -13,19 +13,37 @@
 
     li{
       list-style-type: none;
-      padding:2em;
       border-top:1px solid #eee;
+      clear:left;
+      position: relative;
 
       img{
-        display: inline-block;
+        float:left;
         width:74px;
         height:74px;
       }
 
-      h3{
-        display: inline-block;
-        margin:0;
-        font-size:1.4em;
+      .info{
+
+        float: left;
+
+        h3{
+          margin:0;
+          font-size:1.4em;
+          padding:0.4em;
+        }
+
+        .rating{
+          position: absolute;
+          top:0;
+          right:0;
+          padding:0.5em;
+          font-size: 1.2em;
+          font-weight: bold;
+          text-align: right;
+          border-bottom-left-radius: 4px;
+        }
+
       }
     }
   }
