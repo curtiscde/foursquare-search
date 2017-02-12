@@ -26,6 +26,9 @@
         <button>Search</button>
       </form>
     </div>
+    <div class="alert-error container" ng-show="errorMessage.length">
+      {{errorMessage}}
+    </div>
     <div class="results" ng-show="venues.length>0">
       <h2>{{venues.length}} venues returned for "{{searchTerm}}"</h2>
       <ul>

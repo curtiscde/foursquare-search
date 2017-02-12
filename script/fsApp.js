@@ -16,10 +16,14 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
                       + "&client_secret=" + config.foursquareApi.clientSecret
                       + "&near=" + $scope.searchText;
 
+      //Reset error message & results
+      $scope.errorMessage = "";
+      $scope.venues = [];
 
       $http.get(searchUrl).then(function(response){
           console.log(response); //TODO: Remove
           console.log(response.status);
+
           if (response.status !== 200){
             $scope.errorMessage = "Something went wrong";
           }
@@ -29,7 +33,7 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
           }
 
         }, function(){
-          console.log("error");
+          $scope.errorMessage = "Something went wrong";
         });
 
       }

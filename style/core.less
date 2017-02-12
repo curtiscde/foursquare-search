@@ -1,7 +1,9 @@
+@import (reference) "variables.less";
+
 body{
   margin:0;
   font-family: sans-serif;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .container{
@@ -11,6 +13,16 @@ body{
 
 .hide{
   display:none;
+}
+
+.alert-error{
+  color:@color-error;
+  background-color:@color-error-bg;
+  border:solid 1px @color-error-border;
+  padding: 1em 1em;
+  margin: 2em;
+  font-size: 1.4em;
+  border-radius: 5px;
 }
 
 @import "form.less";
