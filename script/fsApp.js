@@ -2,7 +2,7 @@
 
 var fsApp = angular.module("fsApp", ['ngRoute'])
 
-.controller('mainController', function($scope, $route, $http) {
+.controller('mainController', function($scope, $route, $http, $sce) {
 
   $scope.submitSearch = function(){
 
@@ -50,9 +50,20 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
         var venue = group.items[v].venue;
 
-        venues.push({
-          name: venue.name
-        });
+        var venueItem = {
+          name: venue.name,
+          imageUrl: null,
+          rating: venue.rating,
+          ratingColor: venue.ratingColor
+        };
+
+        if (venue.photos.groups.length
+            && venue.photos.groups[0].items.length){
+              var img = venue.photos.groups[0].items[0];
+              venueItem.imageUrl = img.prefix + "250x250" + img.suffix;
+        }
+
+        venues.push(venueItem);
 
       }
 
