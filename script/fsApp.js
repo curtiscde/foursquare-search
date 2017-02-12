@@ -21,15 +21,12 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
       $scope.venues = null;
 
       $http.get(searchUrl).then(function(response){
-          console.log(response); //TODO: Remove
-          console.log(response.status);
 
           if (response.status !== 200){
             $scope.errorMessage = "Something went wrong";
           }
           else{
             $scope.venues = mapResultsToVenues(response);
-            console.log($scope.venues);
           }
 
         }, function(){
