@@ -8,6 +8,8 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
     if ($scope.searchText){
 
+      $scope.searchTerm = $scope.searchText;
+
       var searchUrl = config.foursquareApi.url
                       + "/venues/search?v=20161016&intent=checkin"
                       + "&client_id=" + config.foursquareApi.clientId
@@ -17,8 +19,14 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
       $http.get(searchUrl).then(function(response){
           console.log(response); //TODO: Remove
-
-
+          console.log(response.status);
+          if (response.status !== 200){
+            $scope.errorMessage = "Something went wrong";
+          }
+          else{
+            $scope.venues = mapResultsToVenues(response);
+            console.log($scope.venues);
+          }
 
         }, function(){
           console.log("error");
@@ -26,6 +34,20 @@ var fsApp = angular.module("fsApp", ['ngRoute'])
 
       }
 
+  };
+
+  var mapResultsToVenues = function(apiResponse){
+    var venues = [];
+    for(var i = 0; i<apiResponse.data.response.venues.length; i++){
+
+      var venue = apiResponse.data.response.venues[i];
+
+      venues.push({
+        name: venue.name
+      });
+
+    };
+    return venues;
   };
 
 });
