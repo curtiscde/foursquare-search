@@ -4,7 +4,7 @@ A simple application built with AngularJS which returns recommended venues based
 
 The application is available online here:
 
-https://curttimson.github.io/foursquare-search/
+https://curtiscde.github.io/foursquare-search
 
 [![Birmingham Example][1]][1]  [![Cardiff Example][2]][2]
 
